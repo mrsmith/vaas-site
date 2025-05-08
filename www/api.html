@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>VaaS Developer API</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --accent: #6f42c1;
+    }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: 750px;
+      padding: 2rem;
+      color: #333;
+      background: #fefefe;
+    }
+    h1, h2, h3 {
+      color: #111;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.25em;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code, pre {
+      background: #f4f4f4;
+      border-radius: 4px;
+      padding: 0.2em 0.4em;
+    }
+    pre {
+      padding: 1em;
+      overflow-x: auto;
+    }
+    ul {
+      padding-left: 1.5em;
+    }
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      color: #666;
+      text-align: center;
+      border-top: 1px solid #eee;
+      padding-top: 1em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 0.5em;
+      text-align: left;
+    }
+    .cta {
+      display: flex;
+      gap: 1em;
+      margin: 1em 0;
+    }
+    .cta a {
+      padding: 0.5em 1em;
+      background: var(--accent);
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .cta a:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="vaas-developer-api">VaaS Developer API</h1>
+<h2 id="deploy-violence">Deploy Violence</h2>
+<pre class="http"><code>POST /api/v1/violence/deploy
+Content-Type: application/json
+
+{
+  &quot;level&quot;: &quot;shove&quot; | &quot;pummel&quot; | &quot;obliterate&quot;,
+  &quot;target&quot;: &quot;coordinates or ID&quot;
+}</code></pre>
+<h2 id="check-status">Check Status</h2>
+<pre class="http"><code>GET /api/v1/violence/status</code></pre>
+<p><em>Response</em>:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;queue&quot;</span><span class="fu">:</span> <span class="dv">5</span><span class="fu">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;active&quot;</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;collateral&quot;</span><span class="fu">:</span> <span class="st">&quot;minimal&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<h2 id="scale-agents">Scale Agents</h2>
+<pre class="http"><code>PATCH /api/v1/violence/scale
+Content-Type: application/json
+
+{ &quot;delta_agents&quot;: +10 }</code></pre>
+<h2 id="ceasefire">Ceasefire</h2>
+<pre class="http"><code>DELETE /api/v1/violence/ceasefire
+{ &quot;target&quot;: &quot;coordinates or ID&quot; }</code></pre>
+<p><a href="pricing.html">‹ Pricing</a> • <a
+href="index.html">Home</a></p>
+
+<footer>
+  © 2025 VaaS Inc. • <a href="press.html">Press</a> • <a href="api.html">API</a> • <a href="disclaimer.html">Disclaimer</a>
+</footer>
+
+</body>
+</html>
