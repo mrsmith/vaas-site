@@ -4,11 +4,11 @@ PANDOC   := pandoc
 TEMPLATE := templates/template.html
 
 MD := $(wildcard md/*.md)
-HTML := $(patsubst md/%.md,www/%.html,$(MD))
+HTML := $(patsubst md/%.md,docs/%.html,$(MD))
 
 all: $(HTML)
 
-www/%.html: md/%.md
+docs/%.html: md/%.md
 	@echo "→ Generating $@ from $<"
 	$(PANDOC) $< \
 		--metadata title="$$(sed -n 's/^# //p' $< | head -1)" \
@@ -22,6 +22,6 @@ clean:
 
 serve: all
 	@echo "→ Serving at http://localhost:8000"
-	cd www && python3 -m http.server 8000
+	cd docs && python3 -m http.server 8000
 
 .PHONY: all clean serve
