@@ -1,14 +1,14 @@
 # Makefile for VaaS static site
 
 PANDOC   := pandoc
-TEMPLATE := template.html
+TEMPLATE := templates/template.html
 
-MD := $(wildcard *.md)
-HTML := $(MD:.md=.html)
+MD := $(wildcard md/*.md)
+HTML := $(patsubst md/%.md,www/%.html,$(MD))
 
 all: $(HTML)
 
-%.html: %.md
+www/%.html: md/%.md
 	@echo "→ Generating $@ from $<"
 	$(PANDOC) $< \
 		--metadata title="$$(sed -n 's/^# //p' $< | head -1)" \
@@ -22,6 +22,6 @@ clean:
 
 serve: all
 	@echo "→ Serving at http://localhost:8000"
-	python3 -m http.server 8000
+	cd www && python3 -m http.server 8000
 
 .PHONY: all clean serve

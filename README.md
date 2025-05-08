@@ -6,16 +6,16 @@ This repo contains a simple static site powered by Markdown + Pandoc.
 
 ## 🚀 Bootstrap
 
-To generate all content files and the \`Makefile\`, run:
+To generate all content files and the `Makefile`, run:
 
-\`\`\`sh
+```sh
 chmod +x bootstrap.sh
 ./bootstrap.sh
-\`\`\`
+```
 
 This will create:
 
-\`\`\`
+```
 README.md
 index.md
 pricing.md
@@ -23,7 +23,7 @@ api.md
 press.md
 disclaimer.md
 Makefile
-\`\`\`
+```
 
 ---
 
@@ -31,7 +31,7 @@ Makefile
 
 Once bootstrapped:
 
-\`\`\`sh
+```sh
 # Generate HTML from all .md
 make
 
@@ -40,17 +40,17 @@ make clean
 
 # (Optional) Serve locally on http://localhost:8000
 make serve
-\`\`\`
+```
 
-> You can customize the HTML wrapper by editing \`template.html\` before building.
+> You can customize the HTML wrapper by editing `template.html` before building.
 
 ---
 
 ## 🚢 Deploy
 
-1. Commit both your \`.md\` and generated \`.html\` files (or just \`.html\` on \`gh-pages\`).
+1. Commit both your `.md` and generated `.html` files (or just `.html` on `gh-pages`).
 2. Push to GitHub.
-3. In your repo’s Settings → Pages, serve from either \`main\` or \`gh-pages\`.
+3. In your repo’s Settings → Pages, serve from either `main` or `gh-pages`.
 
 ---
 
